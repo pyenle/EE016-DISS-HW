@@ -1,5 +1,6 @@
-def quick_sort(arr, cmp):
-    if len(arr)<=1: return arr
+def quicksort(arr, cmp):
+    if len(arr)<=1: 
+        return arr
     pvt=arr[np.random.randint(len(arr))]   # Picks random element as pivot
     arrlarge,arrsmall,arrequal=[],[],[]
     for e in arr:
@@ -11,7 +12,7 @@ def quick_sort(arr, cmp):
             arrequal.append(e)
 
     # Call recursion on left and right
-    arrsmall=quick_sort(arrsmall)
-    arrlarge=quick_sort(arrlarge)
+    arrsmall=quicksort(arrsmall)
+    arrlarge=quicksort(arrlarge)
     arr=arrsmall+arrequal+arrlarge
     return arr
